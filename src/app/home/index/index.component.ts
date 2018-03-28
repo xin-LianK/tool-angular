@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TipsService } from '../../share/tips';
 
 @Component({
   selector: 'app-index',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
-  constructor() { }
+  constructor(private tipsService: TipsService) { }
 
   ngOnInit() {
   }
 
+  showTips() {
+    this.tipsService.set({ content: '自定义提示：3秒后消失', timeout: 3000 })
+  }
 }
