@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TipsService } from '../../share/tips';
 import { LoadingService } from '../../share/loading';
+import { SpinnerService } from '../../share/spinner';
 
 @Component({
   selector: 'app-index',
@@ -8,10 +9,11 @@ import { LoadingService } from '../../share/loading';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-
+  visible = false;
   constructor(
     private tipsService: TipsService,
-    private loadingService: LoadingService
+    private loadingService: LoadingService,
+    private spinnerService: SpinnerService
   ) { }
 
   ngOnInit() {
@@ -24,4 +26,8 @@ export class IndexComponent implements OnInit {
     this.loadingService.set({ Visible: true });
   }
 
+  toggleSpinner() {
+    this.visible = !this.visible;
+    this.spinnerService.ser({ Visible: this.visible })
+  }
 }

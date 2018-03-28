@@ -6,6 +6,8 @@ import { LoadingComponent } from './loading/loading.component';
 
 import { TipsService } from './tips';
 import { LoadingService } from './loading'
+import { SpinnerComponent } from './spinner/spinner.component';
+import { SpinnerService } from './spinner';
 
 @NgModule({
   imports: [
@@ -13,15 +15,18 @@ import { LoadingService } from './loading'
   ],
   declarations: [
     TipsComponent,
-    LoadingComponent
+    LoadingComponent,
+    SpinnerComponent
   ],
   exports: [
     TipsComponent,
-    LoadingComponent
+    LoadingComponent,
+    SpinnerComponent
   ],
   providers: [
     TipsService,
-    LoadingService
+    LoadingService,
+    SpinnerService
   ]
 })
 export class ShareModule { }
