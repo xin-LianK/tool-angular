@@ -4,7 +4,6 @@ import { AppRoutes } from './app.routing';
 import { ShareModule } from './share/share.module'
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 @NgModule({
   declarations: [
     AppComponent

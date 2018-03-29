@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TipsService } from '../../share/tips';
 import { LoadingService } from '../../share/loading';
 import { SpinnerService } from '../../share/spinner';
+// import { DialogsService } from '../../share/dialogs/dialogs.service';
 
 @Component({
   selector: 'app-index',
@@ -13,7 +14,8 @@ export class IndexComponent implements OnInit {
   constructor(
     private tipsService: TipsService,
     private loadingService: LoadingService,
-    private spinnerService: SpinnerService
+    private spinnerService: SpinnerService,
+    // private dialogsService: DialogsService
   ) { }
 
   ngOnInit() {
@@ -29,5 +31,8 @@ export class IndexComponent implements OnInit {
   toggleSpinner() {
     this.visible = !this.visible;
     this.spinnerService.ser({ Visible: this.visible })
+  }
+  snackBar() {
+    // this.dialogsService.bar("Material SnackBar");
   }
 }

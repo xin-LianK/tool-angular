@@ -8,14 +8,17 @@ import { TipsService } from './tips';
 import { LoadingService } from './loading'
 import { SpinnerComponent } from './spinner/spinner.component';
 import { SpinnerService } from './spinner';
-import { MaterialModule } from './material/material.module';
 import { NotFoundComponent } from './not-found/not-found.component';
+
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogsService } from './dialogs/dialogs.service';
 
 @NgModule({
   imports: [
     CommonModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   ],
   declarations: [
     TipsComponent,
@@ -27,12 +30,12 @@ import { MatButtonModule } from '@angular/material/button';
     TipsComponent,
     LoadingComponent,
     SpinnerComponent,
-    MaterialModule
   ],
   providers: [
     TipsService,
     LoadingService,
-    SpinnerService
+    SpinnerService,
+    DialogsService
   ]
 })
 export class ShareModule { }
