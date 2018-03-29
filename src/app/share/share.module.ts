@@ -8,20 +8,26 @@ import { TipsService } from './tips';
 import { LoadingService } from './loading'
 import { SpinnerComponent } from './spinner/spinner.component';
 import { SpinnerService } from './spinner';
+import { MaterialModule } from './material/material.module';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    MatButtonModule
   ],
   declarations: [
     TipsComponent,
     LoadingComponent,
-    SpinnerComponent
-  ],
+    SpinnerComponent,
+    NotFoundComponent
+],
   exports: [
     TipsComponent,
     LoadingComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    MaterialModule
   ],
   providers: [
     TipsService,
