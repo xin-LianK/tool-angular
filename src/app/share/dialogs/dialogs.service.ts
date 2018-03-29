@@ -5,7 +5,6 @@ import { MessageComponent } from './message/message.component';
 import { ConfirmComponent } from './confirm/confirm.component';
 @Injectable()
 export class DialogsService {
-
     constructor(
         private dialog: MatDialog,
         private snackbar: MatSnackBar
