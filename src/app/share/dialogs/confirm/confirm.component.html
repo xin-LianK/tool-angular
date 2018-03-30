@@ -1,3 +1,9 @@
-<p>
-  confirm works!
-</p>
+<h1 mat-dialog-title>{{title}}</h1>
+<div mat-dialog-content>
+  <p>{{content}}</p>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="'ok'" cdkFocusInitial>确定</button>
+  <button mat-button [mat-dialog-close]="'cancel'" cdkFocusInitial>取消</button>
+</div>

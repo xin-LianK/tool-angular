@@ -9,6 +9,7 @@ import { LoadingService } from './loading'
 import { SpinnerComponent } from './spinner/spinner.component';
 import { SpinnerService } from './spinner';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { MessageComponent, ConfirmComponent, SnackBarComponent } from './dialogs'
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -24,8 +25,11 @@ import { DialogsService } from './dialogs/dialogs.service';
     TipsComponent,
     LoadingComponent,
     SpinnerComponent,
-    NotFoundComponent
-],
+    NotFoundComponent,
+    MessageComponent,
+    ConfirmComponent,
+    SnackBarComponent
+  ],
   exports: [
     TipsComponent,
     LoadingComponent,
@@ -36,6 +40,11 @@ import { DialogsService } from './dialogs/dialogs.service';
     LoadingService,
     SpinnerService,
     DialogsService
+  ],
+  entryComponents: [
+    MessageComponent,
+    ConfirmComponent,
+    TipsComponent
   ]
 })
 export class ShareModule { }
