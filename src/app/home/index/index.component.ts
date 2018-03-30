@@ -33,9 +33,12 @@ export class IndexComponent implements OnInit {
     this.spinnerService.ser({ Visible: this.visible })
   }
   showMessage() {
-    this.dialogsService.message('Hello', 'World')
+    this.dialogsService.message('Hello', 'World');
   }
   showConfig() {
-    this.dialogsService.confirm('Hello', 'World')
+    this.dialogsService.confirm('Hello', 'World');
+  }
+  showSnackBar(){
+    this.dialogsService.bar('Pizza party!!! 🍕',300);
   }
 }

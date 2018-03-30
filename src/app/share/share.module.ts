@@ -12,6 +12,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { MessageComponent, ConfirmComponent, SnackBarComponent } from './dialogs'
 
 import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogsService } from './dialogs/dialogs.service';
 
@@ -19,7 +20,8 @@ import { DialogsService } from './dialogs/dialogs.service';
   imports: [
     CommonModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   declarations: [
     TipsComponent,
@@ -44,7 +46,8 @@ import { DialogsService } from './dialogs/dialogs.service';
   entryComponents: [
     MessageComponent,
     ConfirmComponent,
-    TipsComponent
+    TipsComponent,
+    SnackBarComponent
   ]
 })
 export class ShareModule { }

@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
-import { MatDialog, MatSnackBar, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-// import { SnackBarComponent } from './snack-bar/snack-bar.component';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { SnackBarComponent } from './snack-bar/snack-bar.component';
 import { MessageComponent } from './message/message.component';
 import { ConfirmComponent } from './confirm/confirm.component';
+import { MatSnackBar } from '@angular/material';
 @Injectable()
 export class DialogsService {
     constructor(
         private dialog: MatDialog,
         // private snackbar: MatSnackBar
+        public snackBar: MatSnackBar
     ) { }
 
     message(content: string, title: string = '提示'): Promise<any> {
@@ -22,11 +24,10 @@ export class DialogsService {
         dlgRef.componentInstance.title = title;
         return dlgRef.afterClosed().toPromise().then((rs) => rs === 'ok', rj => false);
     }
-    // bar(content: string, duration: number = 2000) {
-    //     const snackRef = this.snackbar.openFromComponent(SnackBarComponent, {
-    //         duration: duration,
-    //         verticalPosition: 'top'
-    //     })
-    //     snackRef.instance.content = content;
-    // }
+    bar(content: string, time: number) {
+        const snackRef = this.snackBar.openFromComponent(SnackBarComponent, {
+            duration: time
+        })
+        snackRef.instance.content = content;
+    }
 }
