@@ -13,15 +13,19 @@ import { MessageComponent, ConfirmComponent, SnackBarComponent } from './dialogs
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogsService } from './dialogs/dialogs.service';
+import { AlertComponent } from './alert/alert.component';
+import { AlertService } from './alert';
 
 @NgModule({
   imports: [
     CommonModule,
     MatButtonModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    NgbModule
   ],
   declarations: [
     TipsComponent,
@@ -31,6 +35,8 @@ import { DialogsService } from './dialogs/dialogs.service';
     MessageComponent,
     ConfirmComponent,
     SnackBarComponent
+    ,
+    AlertComponent
   ],
   exports: [
     TipsComponent,
@@ -41,13 +47,15 @@ import { DialogsService } from './dialogs/dialogs.service';
     TipsService,
     LoadingService,
     SpinnerService,
-    DialogsService
+    DialogsService,
+    AlertService
   ],
   entryComponents: [
     MessageComponent,
     ConfirmComponent,
     TipsComponent,
-    SnackBarComponent
+    SnackBarComponent,
+    AlertComponent
   ]
 })
 export class ShareModule { }

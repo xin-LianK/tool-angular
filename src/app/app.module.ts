@@ -4,6 +4,7 @@ import { AppRoutes } from './app.routing';
 import { ShareModule } from './share/share.module'
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent
@@ -12,7 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     ShareModule,
     BrowserAnimationsModule,
-    AppRoutes
+    AppRoutes,
+    NgbModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

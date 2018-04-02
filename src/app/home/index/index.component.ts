@@ -3,6 +3,8 @@ import { TipsService } from '../../share/tips';
 import { LoadingService } from '../../share/loading';
 import { SpinnerService } from '../../share/spinner';
 import { DialogsService } from '../../share/dialogs/dialogs.service';
+import { AlertService } from '../../share/alert/alert.service';
+
 
 @Component({
   selector: 'app-index',
@@ -15,7 +17,8 @@ export class IndexComponent implements OnInit {
     private tipsService: TipsService,
     private loadingService: LoadingService,
     private spinnerService: SpinnerService,
-    private dialogsService: DialogsService
+    private dialogsService: DialogsService,
+    private alertService: AlertService
   ) { }
 
   ngOnInit() {
@@ -38,7 +41,10 @@ export class IndexComponent implements OnInit {
   showConfig() {
     this.dialogsService.confirm('Hello', 'World');
   }
-  showSnackBar(){
-    this.dialogsService.bar('Pizza party!!! 🍕',300);
+  showSnackBar() {
+    this.dialogsService.bar('Pizza party!!! 🍕', 300);
+  }
+  showAlert() {
+    this.alertService.alert('Hello', 'world')
   }
 }
