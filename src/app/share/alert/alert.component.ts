@@ -16,8 +16,6 @@ export class AlertComponent implements OnInit {
   private ngbRef: NgbModalRef;
   title: string;
   content: string;
-  confirmed = false;
-  @Output() confirm = new EventEmitter();
   @Output() close = new EventEmitter();
   constructor() { }
 
