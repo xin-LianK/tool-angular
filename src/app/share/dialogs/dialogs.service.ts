@@ -4,6 +4,7 @@ import { SnackBarComponent } from './snack-bar/snack-bar.component';
 import { MessageComponent } from './message/message.component';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { MatSnackBar } from '@angular/material';
+import { ProcessingComponent } from './Processing/Processing.component';
 @Injectable()
 export class DialogsService {
     constructor(
@@ -29,5 +30,12 @@ export class DialogsService {
             duration: time
         })
         snackRef.instance.content = content;
+    }
+    setInProgress(content?: string): () => void {
+        const dlgRef = this.dialog.open(ProcessingComponent, {
+            disableClose: true
+        });
+        dlgRef.componentInstance.content = content;
+        return () => dlgRef.close();
     }
 }

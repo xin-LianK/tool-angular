@@ -47,4 +47,9 @@ export class IndexComponent implements OnInit {
   showAlert() {
     this.alertService.alert('Hello', 'world')
   }
+  Progress(){
+    const progClose = this.dialogsService.setInProgress('正在处理中');
+    progClose();
+    // progClose
+  }
 }

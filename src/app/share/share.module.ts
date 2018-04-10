@@ -10,13 +10,14 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { SpinnerService } from './spinner';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MessageComponent, ConfirmComponent, SnackBarComponent } from './dialogs'
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogsService } from './dialogs/dialogs.service';
 import { AlertComponent } from './alert/alert.component';
+import { ProcessingComponent } from './dialogs/Processing/Processing.component'
 import { AlertService } from './alert';
 
 @NgModule({
@@ -25,7 +26,8 @@ import { AlertService } from './alert';
     MatButtonModule,
     MatDialogModule,
     MatSnackBarModule,
-    NgbModule
+    NgbModule,
+    MatProgressSpinnerModule
   ],
   declarations: [
     TipsComponent,
@@ -36,7 +38,8 @@ import { AlertService } from './alert';
     ConfirmComponent,
     SnackBarComponent
     ,
-    AlertComponent
+    AlertComponent,
+    ProcessingComponent
   ],
   exports: [
     TipsComponent,
@@ -55,7 +58,8 @@ import { AlertService } from './alert';
     ConfirmComponent,
     TipsComponent,
     SnackBarComponent,
-    AlertComponent
+    AlertComponent,
+    ProcessingComponent
   ]
 })
 export class ShareModule { }
